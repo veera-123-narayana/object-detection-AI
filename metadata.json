@@ -1,0 +1,6 @@
+{
+  "name": "Object Detection and Tracking",
+  "description": "A real-time object detection and tracking dashboard using TensorFlow.js and COCO-SSD with Kalman filter tracking, crossing tripwires, and monitoring zones.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
