@@ -51,7 +51,7 @@ export default function App() {
   const [showSpeeds, setShowSpeeds] = useState(false);
 
   // Detection Constraints
-  const [confidenceThreshold, setConfidenceThreshold] = useState(0.4);
+  const [confidenceThreshold, setConfidenceThreshold] = useState(0.15);
   const [skipFrames, setSkipFrames] = useState(1); // Process every N frames
   const [classesToTrack, setClassesToTrack] = useState<Record<string, boolean>>({
     person: true,
@@ -307,6 +307,9 @@ export default function App() {
               try {
                 // Run COCO-SSD detection
                 const predictions = await modelRef.current.detect(video);
+
+                console.log("Predictions:", predictions);
+
                 detections = predictions.map((pred: any) => ({
                   class: pred.class,
                   confidence: pred.score,
